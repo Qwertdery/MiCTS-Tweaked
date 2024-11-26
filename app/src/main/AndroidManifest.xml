@@ -41,11 +41,24 @@
             android:exported="true"
             android:icon="@drawable/ic_tile_service"
             android:label="@string/tile_label"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
-            android:permission="android.permission.BIND_VOICE_INTERACTION">
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
+        </service>
+                <service android:name="MainInteractionService"
+                android:label="Test"
+                android:permission="android.permission.BIND_VOICE_INTERACTION"
+                android:process=":interactor">
+            <meta-data android:name="android.voice_interaction"
+                       android:resource="@xml/interaction_service" />
+            <intent-filter>
+                <action android:name="android.service.voice.VoiceInteractionService" />
+            </intent-filter>
+        </service>
+        <service android:name="MainInteractionSessionService"
+                android:permission="android.permission.BIND_VOICE_INTERACTION"
+                android:process=":session">
         </service>
     </application>
 </manifest>
