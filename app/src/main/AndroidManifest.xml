@@ -48,6 +48,7 @@
         </service>
                 <service android:name="MainInteractionService"
                 android:label="Test"
+                android:exported="true"
                 android:permission="android.permission.BIND_VOICE_INTERACTION"
                 android:process=":interactor">
             <meta-data android:name="android.voice_interaction"
@@ -57,6 +58,7 @@
             </intent-filter>
         </service>
         <service android:name="MainInteractionSessionService"
+                android:exported="true"
                 android:permission="android.permission.BIND_VOICE_INTERACTION"
                 android:process=":session">
         </service>
